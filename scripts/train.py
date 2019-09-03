@@ -50,7 +50,7 @@ from object_detection.legacy import trainer
 from object_detection.builders import dataset_builder
 from object_detection.builders import model_builder
 from object_detection.utils import config_util
-from object_detection.utils import dataset_util
+from object_detection.builders import dataset_builder
 
 tf.logging.set_verbosity(tf.logging.INFO)
 
@@ -116,7 +116,7 @@ def main(_):
       is_training=True)
 
   def get_next(config):
-    return dataset_util.make_initializable_iterator(
+    return dataset_builder.make_initializable_iterator(
         dataset_builder.build(config)).get_next()
 
   create_input_dict_fn = functools.partial(get_next, input_config)
