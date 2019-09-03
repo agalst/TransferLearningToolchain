@@ -223,7 +223,7 @@ def _create_tf_record_from_coco_annotations(
     total_num_annotations_skipped = 0
     for idx, image in enumerate(images):
       #img_data = requests.get(image["file_name"]).content
-      with open(image["file_name"]) as iimmgg:
+      with open(image["file_name"], 'rb') as iimmgg:
           img_data = iimmgg.read()
       image_name = "image"+str(idx)+".jpg"
       image_path = os.path.join(image_dir,image_name)
