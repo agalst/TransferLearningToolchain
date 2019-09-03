@@ -38,8 +38,8 @@ import requests
 from pycocotools import mask
 import tensorflow as tf
 
-from tf.models.research.object_detection.utils import dataset_util
-from tf.models.research.object_detection.utils import label_map_util
+from tensorflow.models.research.object_detection.utils import dataset_util
+from tensorflow.models.research.object_detection.utils import label_map_util
 
 
 flags = tf.app.flags
